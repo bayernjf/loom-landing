@@ -8,8 +8,8 @@ Loom 落地页：私域内容生产白名单平台（SaaS 后台）——13 段�
 中英双语（`/` 英文默认，`/zh/` 中文），React 19 island 承载 final_id 六层快照演示，
 `@bay/landing-ui` 提供品牌返链与 GitHub Star 组件，design token 集中在 `src/styles/global.css` 的 `@layer tokens`。
 
-- 线上：`https://loom.bayjf.com`（English）· `https://loom.bayjf.com/zh/`（简体中文）〔**域名待 owner 确认**〕
-- Pages 项目：`loom-landing`（域名 `loom-landing.pages.dev`）
+- 线上：`https://loom-landing-7b0.pages.dev`（已启用）· 自定义域名 `loom.bayjf.com`〔**待 owner 确认**〕
+- Pages 项目：`loom-landing`（Cloudflare，Git 集成已连 `bayernjf/loom-landing`，生产分支 `main`）
 - 产品仓库：`https://github.com/bayernjf/loom`
 
 ## 当前状态（骨架首版，2026-09-13）

@@ -4,8 +4,8 @@
 
 ## 站点信息
 - Pages 项目：`loom-landing`（已连接 GitHub 仓库 `bayernjf/loom-landing`）
-- 域名：`loom-landing.pages.dev` + 自定义域名 `loom.bayjf.com`〔**待 owner 确认**〕
-  （DNS 需一条 `CNAME loom → loom-landing.pages.dev`，Proxied）
+- Pages 域名：`loom-landing-7b0.pages.dev`（Cloudflare 分配，已启用）
+- 自定义域名：`loom.bayjf.com`〔**待 owner 确认**〕（确认后加 Custom Domain，DNS 加 `CNAME loom → loom-landing-7b0.pages.dev`，Proxied）
 - 技术栈：Astro 7（SSG）+ React 19 island（final_id 快照演示）+ `@bay/landing-ui` + `@astrojs/sitemap`
 - Node：`>=22.12.0`；包管理器 npm
 
@@ -25,6 +25,8 @@ npm run preview
 | Environment variables | `NODE_VERSION = 22`、`PLAYWRIGHT_BROWSERS_PATH = 0` |
 
 **分支策略**：日常开发在 `dev`，推送 `main` 才会构建发布；`dev` 等其他分支只产出 preview 部署。
+（Pages 项目已通过 API 创建并启用 Git 集成：`build_command = npx playwright install chromium && npm run build`、
+`destination_dir = dist`、环境变量 `NODE_VERSION = 22`、`PLAYWRIGHT_BROWSERS_PATH = 0`，与 agent-world-landing 一致。）
 
 ## 发布后验证
 1. 英文首页（`/`）与中文首页（`/zh/`）可访问，React island（final_id 演示）正常加载。
