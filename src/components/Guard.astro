@@ -1,0 +1,81 @@
+---
+import GuardDemo from "./sandbox/GuardDemo";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="guard" id="guard">
+  <div class="shell guard__grid">
+    <div>
+      <p class="kicker">{t("guard.kicker")}</p>
+      <h2 class="guard__title">{t("guard.title")}</h2>
+      <p class="guard__sub">{t("guard.sub")}</p>
+      <ul class="guard__list">
+        <li>{t("guard.p1")}</li>
+        <li>{t("guard.p2")}</li>
+        <li>{t("guard.p3")}</li>
+        <li>{t("guard.p4")}</li>
+      </ul>
+    </div>
+    <div class="guard__demo">
+      <GuardDemo client:idle />
+    </div>
+  </div>
+</section>
+
+<style>
+  .guard {
+    padding: 80px 0;
+  }
+  .guard__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .guard__title {
+    margin-top: 14px;
+    font-size: clamp(26px, 3.6vw, 40px);
+  }
+  .guard__sub {
+    margin-top: 14px;
+    color: var(--ink-dim);
+  }
+  .guard__list {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .guard__list li {
+    padding-left: 18px;
+    position: relative;
+    font-size: 14.5px;
+    color: var(--ink-dim);
+  }
+  .guard__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    background: var(--teal);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  }
+  .guard__demo {
+    background: var(--steel-900);
+    border: var(--hair);
+    border-radius: 12px;
+    padding: 22px;
+  }
+
+  @media (max-width: 820px) {
+    .guard__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

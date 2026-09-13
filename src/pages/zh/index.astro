@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hud from "../../components/Hud.astro";
+import Hero from "../../components/Hero.astro";
+import Chain from "../../components/Chain.astro";
+import Guard from "../../components/Guard.astro";
+import Cta from "../../components/Cta.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout>
+  <Hud />
+  <main>
+    <Hero />
+    <div data-reveal><Chain /></div>
+    <div data-reveal><Guard /></div>
+    <div data-reveal><Cta /></div>
+  </main>
+  <Footer />
+</Layout>

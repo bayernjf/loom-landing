@@ -1,0 +1,122 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const steps = [
+  { n: 1, title: t("chain.s1"), desc: t("chain.s1d") },
+  { n: 2, title: t("chain.s2"), desc: t("chain.s2d") },
+  { n: 3, title: t("chain.s3"), desc: t("chain.s3d") },
+  { n: 4, title: t("chain.s4"), desc: t("chain.s4d") },
+  { n: 5, title: t("chain.s5"), desc: t("chain.s5d") },
+  { n: 6, title: t("chain.s6"), desc: t("chain.s6d"), frozen: true },
+  { n: 7, title: t("chain.s7"), desc: t("chain.s7d") },
+  { n: 8, title: t("chain.s8"), desc: t("chain.s8d") },
+  { n: 9, title: t("chain.s9"), desc: t("chain.s9d") },
+  { n: 10, title: t("chain.s10"), desc: t("chain.s10d") },
+  { n: 11, title: t("chain.s11"), desc: t("chain.s11d"), readonly: true },
+  { n: 12, title: t("chain.s12"), desc: t("chain.s12d") },
+  { n: 13, title: t("chain.s13"), desc: t("chain.s13d") },
+].map((s) => ({ ...s, frozen: s.frozen ?? false, readonly: s.readonly ?? false }));
+---
+
+<section class="chain" id="chain">
+  <div class="shell">
+    <p class="kicker">{t("chain.kicker")}</p>
+    <h2 class="chain__title">{t("chain.title")}</h2>
+    <p class="chain__sub">{t("chain.sub")}</p>
+
+    <div class="chain__grid">
+      {
+        steps.map((s) => (
+          <article class:list={["panel", "step", { "step--frozen": s.frozen, "step--ro": s.readonly }]}>
+            <header class="step__head">
+              <span class="step__n">{String(s.n).padStart(2, "0")}</span>
+              {s.frozen && <span class="step__tag">FROZEN</span>}
+              {s.readonly && <span class="step__tag">READONLY</span>}
+            </header>
+            <h3 class="step__title">{s.title}</h3>
+            <p class="step__desc">{s.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .chain {
+    padding: 80px 0;
+  }
+  .chain__title {
+    margin-top: 14px;
+    font-size: clamp(26px, 3.6vw, 40px);
+  }
+  .chain__sub {
+    margin-top: 12px;
+    color: var(--ink-dim);
+    max-width: 620px;
+  }
+  .chain__grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .step {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 160ms ease-out;
+  }
+  .step:hover {
+    border-color: var(--teal);
+  }
+  .step--frozen {
+    border-color: var(--amber-dim);
+  }
+  .step--frozen:hover {
+    border-color: var(--amber);
+  }
+  .step--ro {
+    border-color: var(--teal-dim);
+  }
+  .step--ro:hover {
+    border-color: var(--teal);
+  }
+  .step__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .step__n {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+  }
+  .step__tag {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--amber-dim);
+    color: var(--ink);
+  }
+  .step--ro .step__tag {
+    background: var(--teal-dim);
+  }
+  .step__title {
+    font-size: 15px;
+  }
+  .step__desc {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+  }
+</style>
