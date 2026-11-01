@@ -67,6 +67,15 @@ export const ui = {
     "cta.sub":
       "Private beta is open. Tell us which platforms and product lines you want to run first.",
     "cta.button": "Request access",
+    "cta.form.name": "Name (optional)",
+    "cta.form.email": "Work email",
+    "cta.form.platforms": "Platforms and product lines you want to run first",
+    "cta.form.submit": "Request access",
+    "cta.form.note":
+      "Opens your mail app with these details prefilled. We only use them to reply to this request.",
+    "cta.form.opening": "Opening your mail app…",
+    "cta.form.fallback": "Prefer email?",
+    "cta.form.invalid": "Please add your email and the platforms you want to run.",
     "cta.email": "b4yernjf@gmail.com",
 
     "foot.tag": "Private content production whitelist platform",
@@ -141,6 +150,14 @@ export const ui = {
     "cta.title": "让内容产线跑在 Loom 上",
     "cta.sub": "私域内测开放中。告诉我们你想先跑哪些平台和产品线。",
     "cta.button": "申请访问",
+    "cta.form.name": "称呼（可选）",
+    "cta.form.email": "工作邮箱",
+    "cta.form.platforms": "想先跑哪些平台和产品线",
+    "cta.form.submit": "申请访问",
+    "cta.form.note": "提交会打开你的邮件客户端并预填上述信息，我们仅用于回复本次申请。",
+    "cta.form.opening": "正在打开邮件客户端…",
+    "cta.form.fallback": "也可以直接发邮件：",
+    "cta.form.invalid": "请填写邮箱和想先跑的平台。",
     "cta.email": "b4yernjf@gmail.com",
 
     "foot.tag": "私域内容生产白名单平台",
