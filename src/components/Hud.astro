@@ -1,5 +1,9 @@
 ---
 import Logo from "./Logo.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="top">
@@ -10,7 +14,7 @@ import Logo from "./Logo.astro";
     </a>
     <span class="top__status">
       <span class="dot"></span>
-      v0.1 · DESIGN PHASE
+      {t("hud.status")}
     </span>
   </div>
 </header>

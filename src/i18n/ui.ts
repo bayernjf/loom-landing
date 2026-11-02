@@ -12,6 +12,7 @@ export const ui = {
       "A 13-stage content production chain: AI drafts candidates, human gates decide, final_id is the single publishable exit, feedback flows back into knowledge.",
 
     "nav.langSwitch": "中文",
+    "hud.status": "Private beta is open",
 
     "hero.kicker": "CHAIN_13 · CONTENT FACTORY",
     "hero.title": "Turn product data into publishable content through one auditable chain.",
@@ -114,6 +115,7 @@ export const ui = {
       "一条 13 段内容生产链：AI 只产候选、人工 Gate 裁决，final_id 唯一出口，反馈回流反哺知识。",
 
     "nav.langSwitch": "English",
+    "hud.status": "内测开放中",
 
     "hero.kicker": "CHAIN_13 · 内容工厂",
     "hero.title": "把产品信息变成可发布内容，走同一条可审计的产线。",
