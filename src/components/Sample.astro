@@ -1,0 +1,152 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="sample" id="sample">
+  <div class="shell">
+    <p class="kicker">{t("sample.kicker")}</p>
+    <h2 class="sample__title">{t("sample.title")}</h2>
+    <p class="sample__sub">{t("sample.sub")}</p>
+
+    <div class="sample__grid">
+      <div class="panel sample__copy">
+        <ul class="sample__list">
+          <li><b>{t("sample.p1k")}</b> {t("sample.p1d")}</li>
+          <li><b>{t("sample.p2k")}</b> {t("sample.p2d")}</li>
+          <li><b>{t("sample.p3k")}</b> {t("sample.p3d")}</li>
+        </ul>
+      </div>
+
+      <div class="panel sample__card" aria-label={t("sample.cardLabel")}>
+        <header class="sample__cardHead">
+          <span class="sample__id">final_id · <b>f_8f3a</b></span>
+          <span class="sample__tag sample__tag--ok">{t("sample.cleaned")}</span>
+        </header>
+        <div class="sample__meta">
+          <span>douyin · zh-CN</span>
+          <span>PCP · PWS-frozen</span>
+        </div>
+        <h3 class="sample__headline">{t("sample.headline")}</h3>
+        <p class="sample__body">{t("sample.body")}</p>
+        <footer class="sample__foot">
+          <span>{t("sample.footGate")}</span>
+          <span>{t("sample.footHint")}</span>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sample {
+    padding: 80px 0;
+  }
+  .sample__title {
+    margin-top: 14px;
+    font-size: clamp(26px, 3.6vw, 40px);
+  }
+  .sample__sub {
+    margin-top: 12px;
+    color: var(--ink-dim);
+    max-width: 620px;
+  }
+  .sample__grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .sample__copy {
+    padding: 22px;
+  }
+  .sample__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .sample__list li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-dim);
+  }
+  .sample__list b {
+    color: var(--ink);
+  }
+  .sample__card {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .sample__cardHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .sample__id {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+  .sample__id b {
+    color: var(--amber);
+  }
+  .sample__tag {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .sample__tag--ok {
+    background: var(--teal-dim);
+    color: var(--ink);
+  }
+  .sample__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+  .sample__headline {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .sample__body {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: var(--ink-dim);
+    white-space: pre-line;
+  }
+  .sample__foot {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    border-top: var(--hair);
+    padding-top: 12px;
+  }
+
+  @media (max-width: 820px) {
+    .sample__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
