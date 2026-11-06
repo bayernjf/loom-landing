@@ -20,7 +20,13 @@ const t = useTranslations(lang);
         </ul>
       </div>
 
-      <div class="panel sample__card" aria-label={t("sample.cardLabel")}>
+      <!--
+        Placeholder contract (UIUX P2 #7): this card renders demo copy, not a
+        real Loom artifact. data-sample="placeholder" marks it for tests and
+        for the future swap to a real, redacted production sample — only the
+        data source changes then; this markup/structure stays.
+      -->
+      <div class="panel sample__card" data-sample="placeholder" aria-label={t("sample.cardLabel")}>
         <header class="sample__cardHead">
           <span class="sample__id">final_id · <b>f_8f3a</b></span>
           <span class="sample__tag sample__tag--ok">{t("sample.cleaned")}</span>
