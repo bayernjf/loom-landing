@@ -43,11 +43,19 @@ Hero 的 "Join the private beta" 为主 CTA，`Request access` 为站内表单�
 ## 数字型文案对账清单（产品迭代后优先核对，易过期）
 | 落地页表述 | 产品事实来源（loom 仓库） | 对账状态 |
 | --- | --- | --- |
-| 13 段链（CHAIN_13）各段描述 | docs/01 PRD、README 一图流 | 🟡 初版摘自 README，待按 docs 全量核对 |
-| final_id = 6 层快照（PWS+PCP+CSP+CSTP+CEP+CCR） | README final 定义 | 🟡 待核对 docs/05 契约层 |
-| 唯一出口 E1.1 publishFCW | README / docs/02 Q 记录 | 🟡 待核对 |
-| approveAtomGuard 10 项 / pwsReadiness 5 项 / PCP 17 字段 Σ≤1.0 | README / docs/01 | 🟡 待核对 |
+| 13 段链（CHAIN_13）各段描述 | docs/01 PRD、README 一图流 | ✅ 2026-11-16 全量核对：s1–s13 与 docs/01:39-45 一图流一一对应（s4=approveAtomGuard、s6=PWS 冻结、s7=四态平台适配、s10=CP-BAN/CP-DOWN 规则库、s11=5 项 Guard 全过才出 final_id、s12=只读消费+强制复检）；**2 处数字漂移**见下行 |
+| final_id = 6 层快照（PWS+PCP+CSP+CSTP+CEP+CCR） | README final 定义 | ✅ docs/01:14 一致（产品 PWS + 5 类通用原子 = 6 层） |
+| 唯一出口 E1.1 publishFCW | README / docs/02 Q 记录 | ✅ docs/01:14,134 一致（全系统唯一能生成 `final_content_whitelist_id` 的出口，其余写入即越权） |
+| approveAtomGuard 10 项 / pwsReadiness 5 项 / PCP 17 字段 Σ≤1.0 | README / docs/01 | ✅ 三项一致：docs/01:79（10 项清单）、:98（5 项清单）、:113-114（strategyFields17 + PT-PCP-V1.5 Σ≤1.0） |
 | 内测（beta）定位 | 产品仓库未见「内测」记录 | ⬜ **待 owner 拍板**（影响 Hero/CTA 文案） |
+
+**2026-11-16 对账发现的两处数字漂移（未改落地页，待产品侧先定口径）**：
+
+1. **「14-state machine」（`chain.s1d`）**：docs/01 §C1 Q5 已定稿「新增第 15 态『类目创建中』，升级为
+   productIntake15」；产品 README 与落地页都还写 14 态。应先改产品 README，落地页跟随。
+2. **「C1 five-signal recognition」（`chain.s2d`）**：docs/01 §C1.1 Q2 定稿「第一期只启用文本三信号，
+   图像后置」；五信号是全量设计（name/brief/卖点/主图/包装图，docs/01:60）。落地页与 README 一致，
+   属口径差异而非硬错；若要贴首期形态，可改「five-signal model（text-first）」并双语同改。
 
 ## 注意点
 - **域名未定**：`src/consts.ts` 的 `SITE_URL` 与 `public/robots.txt` 的 Sitemap 均为占位
