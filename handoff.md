@@ -1,6 +1,6 @@
 # Handoff — loom-landing
 
-更新时间：2026-09-13
+更新时间：2026-11-15
 
 ## 项目概况
 Loom 落地页：私域内容生产白名单平台（SaaS 后台）——13 段内容生产链（CHAIN_13），AI 只产候选、
@@ -12,7 +12,26 @@ Loom 落地页：私域内容生产白名单平台（SaaS 后台）——13 段�
 - Pages 项目：`loom-landing`（Cloudflare，Git 集成已连 `bayernjf/loom-landing`，生产分支 `main`）
 - 产品仓库：`https://github.com/bayernjf/loom`
 
-## 当前状态（骨架首版，2026-09-13）
+## 2026-11-15 CTA 收尾（Tier0 UIUX #12 已落地）
+
+Hero 的 "Join the private beta" 为主 CTA，`Request access` 为站内表单（保留 mailto 兜底）。
+三枚原子提交在 `dev`（未推送）：
+
+- `9fcbfec` 表单校验：`novalidate` 下原来只查非空，`foo@` 会打开一封 owner 无法回复的
+  邮件草稿；改为用 email input 自身 `checkValidity()`，新增双语 `cta.form.invalidEmail`。
+- `f2d87d6` 触达目标：390px 视口实测表单提交按钮 37px、hero 主 CTA 43px，均低于 44px；
+  只给这两个转化动作加 scoped `min-height: 44px`，不动共享 `.btn`。
+- `94dfc4a` 源码卫生：删 `Cta.astro` 里多余的 `</section>`（Astro 编译器会直接丢弃，
+  从未到达浏览器），fallback 行补空格（原来渲染成 `Prefer email?b4yernjf@gmail.com`）。
+
+验证：`npm run check` 0 errors；`npm run build` 绿；Playwright 脚本 **29/29 通过**
+（含 2 个正对照），覆盖 en/zh 黄金路径 mailto URL 逐字段断言、空提交/缺平台/坏邮箱的
+阻断 + 焦点 + 文案、390px 无横向溢出、按钮 44px。
+
+口径：按 bayjf UIUX 报告「站内表单（保留 mailto 兜底）」执行；静态站无后端，表单只
+组合 mailto 草稿，不做存库。是否加后端存储待 owner 决策。
+
+## 历史状态（骨架首版，2026-09-13）
 
 按 `agent-world-landing` 惯例搭建的初始骨架：
 
