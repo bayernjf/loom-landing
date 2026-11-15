@@ -94,6 +94,7 @@ export const ui = {
     "cta.form.opening": "Opening your mail app…",
     "cta.form.fallback": "Prefer email?",
     "cta.form.invalid": "Please add your email and the platforms you want to run.",
+    "cta.form.invalidEmail": "Please enter a valid email address so we can reply.",
     "cta.email": "b4yernjf@gmail.com",
 
     "foot.tag": "Private content production whitelist platform",
@@ -193,6 +194,7 @@ export const ui = {
     "cta.form.opening": "正在打开邮件客户端…",
     "cta.form.fallback": "也可以直接发邮件：",
     "cta.form.invalid": "请填写邮箱和想先跑的平台。",
+    "cta.form.invalidEmail": "请填写有效的邮箱地址，方便我们回复。",
     "cta.email": "b4yernjf@gmail.com",
 
     "foot.tag": "私域内容生产白名单平台",
