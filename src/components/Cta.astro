@@ -45,7 +45,7 @@ const t = useTranslations(lang);
         <p id="cta-note" class="cta__note">{t("cta.form.note")}</p>
         <p class="cta__status" role="status" aria-live="polite" data-cta-status></p>
         <p class="cta__fallback">
-          {t("cta.form.fallback")}
+          {t("cta.form.fallback")}{" "}
           <a href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a>
         </p>
       </form>
@@ -92,7 +92,6 @@ const t = useTranslations(lang);
     });
   });
 </script>
-</section>
 
 <style>
   .cta {
