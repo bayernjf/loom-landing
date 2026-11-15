@@ -49,13 +49,15 @@ Hero 的 "Join the private beta" 为主 CTA，`Request access` 为站内表单�
 | approveAtomGuard 10 项 / pwsReadiness 5 项 / PCP 17 字段 Σ≤1.0 | README / docs/01 | ✅ 三项一致：docs/01:79（10 项清单）、:98（5 项清单）、:113-114（strategyFields17 + PT-PCP-V1.5 Σ≤1.0） |
 | 内测（beta）定位 | 产品仓库未见「内测」记录 | ⬜ **待 owner 拍板**（影响 Hero/CTA 文案） |
 
-**2026-11-16 对账发现的两处数字漂移（未改落地页，待产品侧先定口径）**：
+**2026-11-16 对账发现的两处数字漂移（同日已按 PRD 定稿口径修正，落地页与产品 README 同步）**：
 
 1. **「14-state machine」（`chain.s1d`）**：docs/01 §C1 Q5 已定稿「新增第 15 态『类目创建中』，升级为
-   productIntake15」；产品 README 与落地页都还写 14 态。应先改产品 README，落地页跟随。
+   productIntake15」。已改：产品 README 一图流 `14态状态机 → 15态状态机`；落地页 `chain.s1d`
+   双语改 15-state / 15 态。
 2. **「C1 five-signal recognition」（`chain.s2d`）**：docs/01 §C1.1 Q2 定稿「第一期只启用文本三信号，
-   图像后置」；五信号是全量设计（name/brief/卖点/主图/包装图，docs/01:60）。落地页与 README 一致，
-   属口径差异而非硬错；若要贴首期形态，可改「five-signal model（text-first）」并双语同改。
+   图像后置」；五信号是全量设计（name/brief/卖点/主图/包装图，docs/01:60）。已改：产品 README
+   一图流标注 `·首期文本三信号`；落地页 `chain.s2d` 双语改「five-signal model (text-first)」/
+   「五信号模型（文本优先）」，与首期形态一致。
 
 ## 注意点
 - **域名未定**：`src/consts.ts` 的 `SITE_URL` 与 `public/robots.txt` 的 Sitemap 均为占位
