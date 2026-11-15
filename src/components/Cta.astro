@@ -154,6 +154,8 @@ const t = useTranslations(lang);
   }
   .cta__form .btn {
     justify-content: center;
+    /* 44px is the touch-target minimum; the shared .btn padding yields 37px. */
+    min-height: 44px;
   }
   .cta__note,
   .cta__fallback,
