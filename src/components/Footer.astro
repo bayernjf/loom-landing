@@ -11,6 +11,10 @@ const altPath = getAltLangPath(Astro.url, lang);
 
 // the legal pages carry this footer too, so section links have to be absolute
 const home = localizePath("/", lang);
+const caseUrl =
+  lang === "zh"
+    ? "https://bayjf.com/zh/products/loom/"
+    : "https://bayjf.com/products/loom/";
 
 const year = 2026;
 ---
@@ -27,6 +31,7 @@ const year = 2026;
     <nav class="foot__nav">
       <a href={`${home}#chain`}>{t("foot.nav.chain")}</a>
       <a href={`${home}#cta`}>{t("foot.nav.cta")}</a>
+      <a href={caseUrl}>{t("foot.nav.case")}</a>
       <a href={localizePath("/privacy", lang)}>{t("foot.nav.privacy")}</a>
       <a href={localizePath("/terms", lang)}>{t("foot.nav.terms")}</a>
     </nav>

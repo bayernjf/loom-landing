@@ -100,6 +100,7 @@ export const ui = {
     "foot.tag": "Private content production whitelist platform",
     "foot.nav.chain": "The Chain",
     "foot.nav.cta": "Beta",
+    "foot.nav.case": "Case study",
     "foot.nav.privacy": "Privacy",
     "foot.nav.terms": "Terms",
 
@@ -200,6 +201,7 @@ export const ui = {
     "foot.tag": "私域内容生产白名单平台",
     "foot.nav.chain": "13 段链",
     "foot.nav.cta": "内测",
+    "foot.nav.case": "案例页",
     "foot.nav.privacy": "隐私政策",
     "foot.nav.terms": "服务条款",
 
