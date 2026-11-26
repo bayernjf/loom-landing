@@ -2,6 +2,20 @@
 
 更新时间：2026-11-15
 
+## 待办登记（标准）
+
+> 本段是本仓唯一活跃待办入口；详细背景见下方原有章节。
+> 最近同步：2026-11-26
+
+<!-- tier:todos v1 -->
+| id | title | status | priority | owner | next | evidence | updated |
+|---|---|---|---|---|---|---|---|
+| LML-01 | 确认域名与内测定位 | open | p1 | owner | 是否用 loom.bayjf.com；保留内测漏斗还是开源可用导向 | `handoff.md` 下一步 1 | 2026-11-15 |
+| LML-02 | 13 段链文案对账 | open | p1 | self | 按产品仓 docs 全量对账，含 S 级红旗 4 条裁决结果 | `handoff.md` 下一步 2 | 2026-11-15 |
+| LML-03 | 视觉细节补齐 | open | p2 | self | Hero 主视觉、链横向连接线、OG 截图排版 | `handoff.md` 下一步 3 | 2026-11-15 |
+| LML-04 | 与 hub 产品卡封面一致 | open | p3 | self | 引用构建产出的 preview.png | `handoff.md` 下一步 4 | 2026-11-15 |
+<!-- /tier:todos -->
+
 ## 项目概况
 Loom 落地页：私域内容生产白名单平台（SaaS 后台）——13 段内容生产链（CHAIN_13），AI 只产候选、
 人工 Gate 裁决、`final_id` 唯一出口、反馈回流反哺知识。Astro 7 静态站点（`output: 'static'`），
