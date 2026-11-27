@@ -17,6 +17,7 @@ const t = useTranslations(lang);
         class="cta__form"
         data-cta-form
         data-invalid={t("cta.form.invalid")}
+        data-invalid-email={t("cta.form.invalidEmail")}
         data-opening={t("cta.form.opening")}
         novalidate
       >
@@ -44,7 +45,7 @@ const t = useTranslations(lang);
         <p id="cta-note" class="cta__note">{t("cta.form.note")}</p>
         <p class="cta__status" role="status" aria-live="polite" data-cta-status></p>
         <p class="cta__fallback">
-          {t("cta.form.fallback")}
+          {t("cta.form.fallback")}{" "}
           <a href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a>
         </p>
       </form>
@@ -60,13 +61,18 @@ const t = useTranslations(lang);
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(form);
+      const emailField = form.querySelector<HTMLInputElement>('input[type="email"]');
       const address = String(data.get("email") ?? "").trim();
       const platforms = String(data.get("platforms") ?? "").trim();
-      if (!address || !platforms) {
+      // novalidate hides the browser bubble; a malformed address would open a draft nobody can reply to.
+      const badEmail = Boolean(address) && emailField?.checkValidity() === false;
+      if (!address || !platforms || badEmail) {
         const status = form.querySelector<HTMLElement>("[data-cta-status]");
-        const msg = form.dataset.invalid ?? "Please fill in the required fields.";
-        if (status) status.textContent = msg;
-        (address ? form.querySelector<HTMLElement>("textarea") : form.querySelector<HTMLElement>('input[type="email"]'))?.focus();
+        if (status) {
+          status.textContent = (badEmail ? form.dataset.invalidEmail : form.dataset.invalid) ?? "";
+        }
+        const target = !address || badEmail ? emailField : form.querySelector<HTMLElement>("textarea");
+        target?.focus();
         return;
       }
       const name = String(data.get("name") ?? "").trim();
@@ -86,7 +92,6 @@ const t = useTranslations(lang);
     });
   });
 </script>
-</section>
 
 <style>
   .cta {
@@ -148,6 +153,8 @@ const t = useTranslations(lang);
   }
   .cta__form .btn {
     justify-content: center;
+    /* 44px is the touch-target minimum; the shared .btn padding yields 37px. */
+    min-height: 44px;
   }
   .cta__note,
   .cta__fallback,
